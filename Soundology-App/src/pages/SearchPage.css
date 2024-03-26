@@ -1,0 +1,49 @@
+ion-card {
+    --background: #1b1b1be7;
+    --color: #9efff0;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    width:80%;
+  }
+  
+  ion-card-title {
+    --color: #52ffe4;
+    font-size: 20pt;
+  }
+  
+  ion-card-subtitle {
+    --color: #d1fff8;
+  } 
+
+  .view-button {
+    --color: #03586d;
+  }
+
+
+.search-button {
+    --background: #48D1CC;    
+}
+.search-bar {
+    --background:black;
+    --text-color: white;
+}
+/* .modal-content {
+    font-size: 20pt;
+  } */
+  .modal-title {
+    font-size: 32pt;
+    text-decoration: underline;
+  }
+  .modal-search-close {
+    --background-color: #48D1CC;
+    margin-top: -115px;
+    margin-left: 0px;
+    padding: 0px;
+  }
+  .modal-search-results {
+    color:#48D1CC;
+    text-align: center;
+    padding: 28px;
+    font-size: 24pt;
+  }

@@ -1,0 +1,52 @@
+  
+  ion-card-title {
+    --color: black;
+    font-size: 42pt;
+  }
+  ion-card {
+    --background:#48D1CC;
+    --color:black;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    width:80%;
+  }
+
+  .title-card {
+    --background:#6751c9;
+    font-size: 32pt;
+  }
+
+  .fav-nav {
+    margin:0px;
+    padding: px;
+    width: auto;
+
+  }
+
+.play-icon, .modal-play {
+  font-size: 38px;
+  padding: 5px;
+  height:105px
+}
+
+.modal-content {
+  font-size: 20pt;
+}
+.modal-title {
+  text-align: center;
+  font-size: 32pt;
+  text-decoration: underline;
+}
+.modal-subtitle {
+  text-align: center;
+  font-size: 32pt;
+}
+.modal-play {
+  padding:20px;
+  width:fit-content;
+  align-self: center;
+}
+ion-text {
+  font-size: 16pt;
+}

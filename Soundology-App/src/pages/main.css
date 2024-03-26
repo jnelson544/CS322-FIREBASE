@@ -1,0 +1,52 @@
+
+.app {
+  background: rgb(236,192,211);
+  background: radial-gradient(circle, rgba(236,192,211,1) 0%, rgba(180,207,239,1) 100%);
+}
+
+.app-title {
+  font-family: "Lucida Handwriting", cursive;
+  color: black;
+  font-size: 52pt;
+  text-align: center;
+  position: relative; /* Change position to relative */
+  top: 10px;
+}
+
+/* Media query for desktop view */
+@media (min-width: 768px) {
+  .app-title {
+      font-size: 52pt; /* Increase font size for desktop */
+  }
+}
+
+/* Media query for mobile view */
+@media (max-width: 767px) {
+  .app-title {
+      font-size: 35pt; /* Decrease font size for mobile */
+      top: 9px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content {
+  --background: rgb(236,192,211);
+  --background: radial-gradient(circle, rgba(236,192,211,1) 0%, rgba(180,207,239,1) 100%);
+  --min-height: calc(500vh - 100px); 
+  --overflow-y: auto;
+  --margin: center;
+
+}
+
+.video-frame {
+  margin-left: 40px;
+}
+h2 {
+  text-align: center;
+}

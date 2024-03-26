@@ -1,0 +1,69 @@
+
+.log-in, .sign-up {
+    --background: #48D1CC; 
+    --width: max-content;
+    --border-radius: 15%;
+    margin-left: 50px;
+    padding: 5px;
+}
+.play-video {
+    --background: #d67bd6;
+    --width: max-content;
+    --border-radius: 15%;
+    margin-left: 50px;
+    padding: 5px;
+}
+
+.modal-content {
+    font-size: 20pt;
+    
+  }
+  .modal-title {
+    font-size: 32pt;
+    text-decoration: underline;
+  }
+
+  .video-container {
+    position: relative;
+    width: 75%;
+    height: 75%;
+    padding-top: 35%; 
+    margin: center;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+   /* Media query for desktop view */
+   @media (min-width: 768px) {
+    .buttons-set {
+      margin-left: 645px;
+      padding: 15px; /* Increase font size for desktop */
+    }
+    .video-container {
+      margin-left: 200px;
+      } 
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 767px) {
+    .buttons-set {
+      margin-left: 10px;
+      padding: 5px; /* Increase font size for desktop */
+    }
+    .video-container {
+      margin-left: 0px;
+      } 
+
+  }
+
+  .playlist-title {
+    font-size: 42pt;
+  }
+  /* Decrease font size for mobile */
+    

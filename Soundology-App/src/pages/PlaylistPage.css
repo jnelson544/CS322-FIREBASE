@@ -1,0 +1,95 @@
+/* added for firestore info */
+.title-card {
+    --background:#6751c9;
+    font-size: 42pt;
+  }
+.card {
+    justify-content: center;
+    height: fit-content;
+    margin: 10px;
+    padding: 0px;
+  }
+  h2 {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .list-card {
+    margin-left: 150px;
+    --overflow-x: hidden;
+
+  }
+  .outer-list-card {
+    margin-left: 150px;
+    margin-bottom: 60px;
+    --overflow-x: hidden;
+    
+  }
+  /* Media query for desktop view */
+  @media (min-width: 768px) {
+    .list-card {
+        margin-left: 160px; /* Increase font size for desktop */
+    }
+    .outer-list-card{
+        margin-bottom: 100px;
+    }
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 767px) {
+    .list-card {
+        margin-left:30px; /* Decrease font size for mobile */
+    }
+    .outer-list-card {
+        margin-left: 38px;
+        
+    }
+  }
+  .playlist-card {
+    width: fit-content;
+    --overflow-x: hidden;
+    --overflow-y: auto;
+  }
+  .modal-content {
+    font-size: 20pt;
+  }
+  .modal-title {
+    text-align: center;
+    font-size: 32pt;
+    text-decoration: underline;
+  }
+  .modal-subtitle {
+    text-align: center;
+    font-size: 32pt;
+  }
+  .grid-playlist {
+    margin-left: 20px;
+    padding: 0px;
+  }
+  /* Media query for desktop view */
+  @media (min-width: 768px) {
+    .playlist-card {
+        width:99%; /* Increase font size for desktop */
+    }
+    .grid-playlist {
+        margin-left: 400px;
+        padding: 0px;
+      } 
+    .title-card {
+        margin-left: 10%;
+    }
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 767px) {
+    .list-card {
+        margin-left:30px; /* Decrease font size for mobile */
+    }
+    .title-card {
+      font-size: 33pt;
+    }
+  }
+
+  .playlist-title {
+    font-size: 42pt;
+  }
