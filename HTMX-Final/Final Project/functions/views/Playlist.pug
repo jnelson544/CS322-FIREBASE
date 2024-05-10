@@ -1,0 +1,106 @@
+.playlists
+  h1 Playlists
+
+  // Display top playlists as part of the main content
+  h2 Top 4 Favorite Playlists
+  - if (!topPlaylistTitles)
+    - var topPlaylistTitles = ["Country Music", "Pop Music", "EDM Music", "Indie Rock"];
+  - if (topPlaylistTitles && topPlaylistTitles.length > 0)
+    each playlistTitle in topPlaylistTitles.slice(0, 4)
+      .playlist-tile
+        | #{playlistTitle}
+  // Table for all playlists
+  h2 Favorite Playlists
+  table
+    thead
+      tr
+        th Title
+        th Genre
+        th Songs
+        th Runtime
+    tbody#playlistsBody
+
+script.
+  if (!window.firebaseConfig) {
+    window.firebaseConfig = {
+      apiKey: "AIzaSyDBFlpbEadpl3iGhS_QD_nPhmw0MbyvpxY",
+      authDomain: "htmx-soundology.firebaseapp.com",
+      projectId: "htmx-soundology",
+      storageBucket: "htmx-soundology.appspot.com",
+      messagingSenderId: "232772652437",
+      appId: "1:232772652437:web:60a15987926608aa3d3a9c"
+    };
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  function fetchPlaylists() {
+    const playlistsCollection = firebase.firestore().collection('Playlists').doc('Song-Info').collection('Playlist_Name');
+    return playlistsCollection.get();
+  }
+
+  function handlePlaylistsSnapshot(querySnapshot) {
+    const playlistsBody = document.getElementById('playlistsBody');
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${data.Title}</td>
+        <td>${data.Genre}</td>
+        <td>${data.Songs}</td>
+        <td>${data.Runtime}</td>
+      `;
+      playlistsBody.appendChild(newRow);
+    });
+  }
+
+ 
+  function fetchTopPlaylists() {
+    return [];
+  }
+
+  // Display top playlists
+  const topPlaylistTitles = fetchTopPlaylists();
+  if (topPlaylistTitles && topPlaylistTitles.length > 0) {
+    topPlaylistTitles.slice(0, 4).forEach((title) => {
+      const playlistTile = document.createElement('div');
+      playlistTile.classList.add('playlist-tile');
+      playlistTile.textContent = title;
+      document.querySelector('.playlists').appendChild(playlistTile);
+    });
+  }
+
+  fetchPlaylists().then((querySnapshot) => {
+    handlePlaylistsSnapshot(querySnapshot);
+  }).catch((error) => {
+    console.error("Error getting playlists:", error);
+  });
+
+style.
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 5px solid #ddd;
+  }
+  tr {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #2FFAA4, #03FB92);
+  }
+  h1, h2 {
+    font-size: 32px;
+    font-family: italic;
+    background: linear-gradient(to right, #2FFAA4, #03FB92);
+  }
+    .playlist-tile {
+    background: linear-gradient(to right, #57CDFC, #03B5FC);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+

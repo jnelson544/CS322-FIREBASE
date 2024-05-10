@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SOUNDOLOGY</title>
+
+    <script src=https://unpkg.com/htmx.org@1.9.11 integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0"crossorigin="anonymous"></script>
+    <script src=https://cdn.tailwindcss.com></script>
+
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+
+    <script defer src="/__/firebase/10.11.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-performance-compat.js"></script>
+
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+        
+      }
+      </style>
+      <style>
+      header,body {
+      background: linear-gradient(to right, #f48fc5, #ac67f6);
+      color: #000000; 
+      padding: 1px; 
+      text-align: center; 
+      max-width: 7xl; 
+      margin: auto; 
+      }
+      .navbar {
+        background: linear-gradient(to right, #f48fc5, #ac67f6);
+        border-bottom: 2px solid #000000; 
+        cursor: pointer;
+      }
+      .iframe-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+      }
+      header {
+        font-size: 32px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+    </style>
+  </head>
+
+  <body hx-get="http://localhost:5001/htmx-soundology/us-central1/home" hx-target="#main" hx-trigger="load">
+    <div class="navbar">
+          <div class="mx-auto flex max-w-7x1 items-center justify-between p-2 lg:px-8">
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Home" hx-target="#main"  class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 20px;">Home</a>
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Search" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 20px;">Search</a>
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Favorites" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 20px;">Favorites</a>
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Playlists" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 20px;">Playlists</a>            
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Login" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 10px;">Login</a>
+              <a hx-get="http://localhost:5001/htmx-soundology/us-central1/Signup" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900" style="font-size: 10px;">SignUp</a>
+            </div>
+    </div>
+    <header>SOUNDOLOGY</header>
+    <div class="pt-10" id="main">
+      <h1>Try one of our popular compilations</h1>
+      <div class="iframe-div">
+          <iframe width="854" height="480" src="https://www.youtube.com/embed/PTtg8Cfhjjc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  </body>
+</html>
+
+

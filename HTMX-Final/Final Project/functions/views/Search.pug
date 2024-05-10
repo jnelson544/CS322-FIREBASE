@@ -1,0 +1,69 @@
+.p-1
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Search - Soundology
+  style.
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    }
+    .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+    .search-input {
+    background-color: white;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    }
+    .search-btn {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+    .tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    }
+    .tile {
+    background-color: #2FFAA4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    }
+.container
+  .search-bar
+    input.search-input(type='text' placeholder='Type title here')
+    button.search-btn Search
+  .tiles
+    // 12 tiles
+    .tile Podcasts
+    .tile New Releases
+    .tile Sleep
+    .tile Wellness
+    .tile Pop
+    .tile Hip-Hop
+    .tile Rap
+    .tile Rock
+    .tile Electronic
+    .tile Classical
+    .tile Country
+    .tile Metal

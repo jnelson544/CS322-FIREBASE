@@ -1,0 +1,75 @@
+.favorites
+  h1 Favorites
+  table
+    thead
+      tr
+        th Title
+        th Artist
+        th Album
+        th Time
+    tbody#favoritesBody
+
+script.
+  if (!window.firebaseConfig) {
+
+    window.firebaseConfig = {
+    apiKey: "AIzaSyDBFlpbEadpl3iGhS_QD_nPhmw0MbyvpxY",
+    authDomain: "htmx-soundology.firebaseapp.com",
+    projectId: "htmx-soundology",
+    storageBucket: "htmx-soundology.appspot.com",
+    messagingSenderId: "232772652437",
+    appId: "1:232772652437:web:60a15987926608aa3d3a9c"
+    };
+
+  firebase.initializeApp(firebaseConfig);
+  }
+
+  function fetchFavorites() {
+    const favoritesCollection = firebase.firestore().collection('Favorites');
+    return favoritesCollection.get();
+  }
+
+
+  function handleFavoritesSnapshot(querySnapshot) {
+    const favoritesBody = document.getElementById('favoritesBody');
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${data.Title}</td>
+        <td>${data.Artist}</td>
+        <td>${data.Album}</td>
+        <td>${data.Time}</td>
+      `;
+      favoritesBody.appendChild(newRow);
+    });
+  }
+
+
+  fetchFavorites().then((querySnapshot) => {
+    handleFavoritesSnapshot(querySnapshot);
+  }).catch((error) => {
+    console.error("Error getting favorites:", error);
+  });
+
+style.
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  }
+  th, td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 5px solid #ddd;
+  }
+  tr {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #2FFAA4, #03FB92);
+  }
+  h1 {
+    font-size: 32px;
+    font-family: italic;
+    background: linear-gradient(to right, #2FFAA4, #03FB92);
+  }
